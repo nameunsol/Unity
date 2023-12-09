@@ -7,13 +7,13 @@ public class CamRotate : MonoBehaviour
     public float rotSpeed = 200f;
     float mx = 0;
     float my = 0;
-    // Start is called before the first frame update
+
     void Start()
     {
-
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
     {
         //1 마우스 입력 받기
