@@ -15,7 +15,7 @@ public class Bubble : MonoBehaviour
     {
         if(other.CompareTag("monster"))
         {
-
+            Debug.Log($"Hit Monster");
         }
     }
 
