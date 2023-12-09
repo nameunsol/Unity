@@ -1480,10 +1480,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MushroomSmilePBR
       objectReference: {fileID: 0}
-    - target: {fileID: 3578092503096220282, guid: c3c76a247c7e43b19a40ebfcfefa8f19, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
