@@ -8,7 +8,7 @@ public class PlayerMove : MonoBehaviour
     //캐릭터 컨트롤러 컴포넌트 받아오기
     CharacterController cc;
     //중력변수
-    float gravity = -20f;
+    public float gravity = -20f;
     //수직 속력 변수
     float yVelocity = 0;
     //점프력 변수
@@ -35,27 +35,23 @@ public class PlayerMove : MonoBehaviour
 
         //2 이동 방향을 설정한다.
         Vector3 dir = new Vector3(h, 0, v);
-        dir = dir.normalized;
         //2.1 메인 카메라를 기준으로 방향을 변환한다.
         dir = Camera.main.transform.TransformDirection(dir);
+
         //2.2 만약 점프 중이었고 다시 바닥에 착지했다면
-        if (isJumping && cc.collisionFlags == CollisionFlags.Below)
+        if (cc.isGrounded)
         {
-            //점프 전 상태로 초기화
-            isJumping = false;
-            //캐릭터 수직 속도를 0으로
             yVelocity = 0;
+            if (Input.GetButtonDown("Jump"))
+            {
+                yVelocity = jumpPower;
+            }
         }
         //2.3 만약 키보드 값이 스페이스바가 들어오고 점프를 하지 않은 상태라면
-        if (Input.GetButtonDown("Jump") && !isJumping)
-        {
-            //캐릭터 수직 속도에 점프력을 적용하고 점프 상태로 변경한다.
-            yVelocity = jumpPower;
-            isJumping = true;
-        }
 
+        yVelocity += (gravity * Time.deltaTime);
 
-        //3 이동 속도에 맞춰 이동한다.x
+        dir.y = yVelocity;
         //p=p0+vt
         cc.Move(dir * moveSpeed * Time.deltaTime);
         //transform.position += dir * moveSpeed * Time.deltaTime;

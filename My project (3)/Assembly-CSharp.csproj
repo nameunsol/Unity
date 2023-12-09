@@ -59,12 +59,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\c#\PlayerRotate.cs" />
-    <Compile Include="Assets\c#\controller.cs" />
+    <Compile Include="Assets\c#\Gem.cs" />
     <Compile Include="Assets\c#\PlayerMove.cs" />
+    <Compile Include="Assets\AurynSky\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
     <Compile Include="Assets\c#\CamRotate.cs" />
     <Compile Include="Assets\c#\CamFollw.cs" />
+    <Compile Include="Assets\c#\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\AurynSky\Gems Ultimate Pack\READ ME.txt" />
     <None Include="Assets\FantasyEnvironments\Environments\README.txt" />
   </ItemGroup>
   <ItemGroup>
