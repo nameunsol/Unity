@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bubble : MonoBehaviour
 {
     ParticleSystem ps;
+    public PlayerFire playerFire;
 
     private void Start()
     {
@@ -15,6 +16,9 @@ public class Bubble : MonoBehaviour
     {
         if(other.CompareTag("monster"))
         {
+            Monster monster = other.GetComponent<Monster>();
+            monster.hp -= playerFire.gunPower;
+            monster.isHit = true;
             Debug.Log($"Hit Monster");
         }
     }

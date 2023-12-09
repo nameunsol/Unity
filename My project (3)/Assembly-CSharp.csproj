@@ -74,6 +74,7 @@
     <Compile Include="Assets\c#\PlayerFire.cs" />
     <Compile Include="Assets\c#\SpawnMonster.cs" />
     <Compile Include="Assets\c#\PlayerMove.cs" />
+    <Compile Include="Assets\c#\MySceneManager.cs" />
     <Compile Include="Assets\Polytope Studio\Lowpoly_Demos\Environment_Free\Helpers\PlayerMovement.cs" />
     <Compile Include="Assets\AurynSky\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
     <Compile Include="Assets\Lowpoly Toon Cat Lite\Demo\Cat_Lite_Demo.cs" />

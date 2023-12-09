@@ -5,8 +5,11 @@ using UnityEngine.AI;
 
 public class Monster : MonoBehaviour
 {
-    public Transform player; // 플레이어의 Transform을 저장하기 위한 변수
     private NavMeshAgent navMeshAgent; // NavMeshAgent 컴포넌트를 저장하기 위한 변수
+    
+    public Transform player; // 플레이어의 Transform을 저장하기 위한 변수
+    public int hp;
+    public bool isHit;
 
     void Start()
     {
@@ -28,5 +31,24 @@ public class Monster : MonoBehaviour
             // 플레이어의 위치를 목적지로 설정
             navMeshAgent.SetDestination(player.position);
         }
+
+        if(hp <= 0)
+        {
+            SpawnMonster.Instance.MonsterDie(this.gameObject);
+        }
+
+        if(isHit)
+        {
+            StartCoroutine(MonsterColor());
+        }
+    }
+
+    private IEnumerator MonsterColor()
+    {
+        SkinnedMeshRenderer mesh = GetComponentInChildren<SkinnedMeshRenderer>();
+        if (mesh != null) mesh.material.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        if (mesh != null) mesh.material.color = Color.white;
+        isHit = false;
     }
 }

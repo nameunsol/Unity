@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
 {
-
     public GameObject firePosition;
     public GameObject bombFactory;
     public GameObject bubbleEffect;
     public float throwPower = 30f;
+    public int gunPower = 1;
 
     public ParticleSystem ps;
 
@@ -18,7 +18,6 @@ public class PlayerFire : MonoBehaviour
         ps = GetComponentInChildren<ParticleSystem>();
     }
 
-
     void Update()
     {
         if (Input.GetMouseButtonDown(1))
@@ -26,7 +25,8 @@ public class PlayerFire : MonoBehaviour
             GameObject bomb = Instantiate(bombFactory);
             bomb.transform.position = firePosition.transform.position;
             Rigidbody rb = bomb.GetComponent<Rigidbody>();
-            rb.AddForce(Camera.main.transform.forward * throwPower, ForceMode.Impulse);
+            Vector3 bombDir = (Camera.main.transform.forward + new Vector3(0f, 0.5f, 0f)) * throwPower;
+            rb.AddForce(bombDir, ForceMode.Impulse);
 
         }
         

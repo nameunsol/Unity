@@ -147,3 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombEffect: {fileID: 9013465017059716264, guid: 03a3ab1fc59607746a2da380a9e7b3fa, type: 3}
+  bombDamage: 2
