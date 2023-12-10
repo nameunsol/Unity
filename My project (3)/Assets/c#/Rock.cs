@@ -98,7 +98,7 @@ public class Rock : MonoBehaviour
         {
             yield return new WaitForSeconds(2.0f); // 초 동안 대기
             uiObject.SetActive(false);
-            if (is10) SceneManager.LoadScene(2);
+            if (is10) SceneManager.LoadScene(0);
         }
     }
 }
