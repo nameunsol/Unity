@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
 {
+    public static PlayerFire Instance;
+
     public GameObject firePosition;
     public GameObject bombFactory;
     public GameObject bubbleEffect;
@@ -11,6 +13,18 @@ public class PlayerFire : MonoBehaviour
     public int gunPower = 1;
 
     public ParticleSystem ps;
+
+    private void Awake() 
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
 
     private void Start()
