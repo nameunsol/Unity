@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public TMP_Text gemCountText;
-    private int gemCount = 0;
+    public int gemCount = 0;
 
     private void Awake()
     {
