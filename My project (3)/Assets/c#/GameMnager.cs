@@ -57,11 +57,12 @@ public class GameMnager : MonoBehaviour
             currentIndex++;
 
             // 다음 대화 표시
+            yield return new WaitForSeconds(0.1f);
             StartCoroutine(DisplayNextMessage());
         }
         else
         {
-            yield return new WaitForSeconds(1.0f); // 2초 동안 대기
+            yield return new WaitForSeconds(1.0f); // 초 동안 대기
             SceneManager.LoadScene(2);
         }
     }

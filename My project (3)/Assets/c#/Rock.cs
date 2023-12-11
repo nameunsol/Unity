@@ -69,6 +69,7 @@ public class Rock : MonoBehaviour
             {
                 Count10();
             }
+            else uiObject.SetActive(false);
         }
     }
 
