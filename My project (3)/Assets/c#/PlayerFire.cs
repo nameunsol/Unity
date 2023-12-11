@@ -11,6 +11,7 @@ public class PlayerFire : MonoBehaviour
     public GameObject bubbleEffect;
     public float throwPower = 30f;
     public int gunPower = 1;
+    public AudioSource bubblesd;
 
     public ParticleSystem ps;
 
@@ -47,6 +48,7 @@ public class PlayerFire : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             ps.Play();
+            bubblesd.Play();
         }
         else if(Input.GetMouseButton(0)) 
         {
